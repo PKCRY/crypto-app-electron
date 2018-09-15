@@ -45,6 +45,9 @@ const shell = require('electron').shell
                     }
                 },
             ]
+        },
+        {
+            label: 'Info',
         }
     ])
     Menu.setApplicationMenu(menu); //in order to make the menu work
