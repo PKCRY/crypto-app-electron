@@ -13,7 +13,7 @@ function getBTC() {
     axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC&tsyms=USD')
         .then( res => {
             const cryptos = res.data.BTC.USD
-            price.innerHTML = `$ ${cryptos.toLocaleString('en')}` 
+            price.innerHTML = `$ ${cryptos.toLocaleString('en')}` //replacing the h1 with the current BTC price
         })
 }
 getBTC(); //calling the function to run it

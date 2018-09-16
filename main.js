@@ -1,5 +1,7 @@
 const {app, BrowserWindow, Menu} = require('electron')
 const shell = require('electron').shell
+
+const ipc = require('electron').ipcMain //inter process communication, allowing communication between those windows or processes
   
   // Keep a global reference of the window object, if you don't, the window will
   // be closed automatically when the JavaScript object is garbage collected.
@@ -77,3 +79,8 @@ const shell = require('electron').shell
   
   // In this file you can include the rest of your app's specific main process
   // code. You can also put them in separate files and require them here.
+
+  //in a nutshell, ipc main will catch the message that's sent from the add.html and then it's going to send that back to the index.html so it can be displayed at the tag with id targetPrice
+  ipc.on('update-notify-value', (event, arg) => {
+      win.webContents.send('targetPriceVal', arg) //defining the name of the message as 'targetPriceVal' and binding it to the response which is whatever is entered into the text field in the add.html file. So. it's gonna send that value to 'win', which is currently bound to the index.html when we create the browser window
+  })
