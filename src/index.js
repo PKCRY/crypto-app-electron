@@ -7,6 +7,12 @@ const ipc = electron.ipcRenderer
 const notifyBtn = document.getElementById('notifyBtn') //refering the Notify Me When button
 const price = document.querySelector('h1')
 const targetPrice = document.getElementById('targetPrice')
+let targetPriceVal
+
+const notification = {
+    title: 'BTC Alert',
+    body: 'BTC just beat your target price!'
+}
 
 
 function getBTC() {
@@ -15,10 +21,15 @@ function getBTC() {
         .then( res => {
             const cryptos = res.data.BTC.USD
             price.innerHTML = `$ ${cryptos.toLocaleString('en')}` //replacing the h1 with the current BTC price
+
+            //creating the notification
+            if(targetPrice.innerHTML != '' && targetPriceVal < res.data.BTC.USD) {
+                const myNotification = new window.Notification(notification.title, notification);
+            }
         })
 }
 getBTC(); //calling the function to run it
-setInterval(getBTC, 30000); //then calling again every 30s
+setInterval(getBTC, 1000); //then calling again every 30s
 
 
 notifyBtn.addEventListener('click', function(event) { //loads the add window
