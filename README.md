@@ -36,7 +36,7 @@ To create the app's _exe_ (executables), install the electron packager via `npm 
 "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
  }
 ```
-**NOTE:** Make sure the icon's path is correct.
+Then, you can run `npm run package-mac`, `npm run package-win` or `npm run package-linux`. **NOTE:** Make sure the icon's path is correct.
 
 ## Main Dependecies
 - [Electron](https://electronjs.org/): Build cross platform desktop apps with JavaScript, HTML, and CSS
