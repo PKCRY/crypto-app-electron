@@ -1,6 +1,7 @@
 const {app, BrowserWindow, Menu} = require('electron')
 const shell = require('electron').shell
 
+
 const ipc = require('electron').ipcMain //inter process communication, allowing communication between those windows or processes
   
   // Keep a global reference of the window object, if you don't, the window will
