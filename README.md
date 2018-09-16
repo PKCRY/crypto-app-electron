@@ -3,6 +3,14 @@
 
 This is a desktop app created with Electron that displays the current Bitcoin price. The app fetches the price using the [Crypto Compare API](https://www.cryptocompare.com/api/#-api-data-price-). Also, the app allows the user to register a target Bitcoin price that when it's reached, it shows a desktop notification letting them know about it. Moreover, it has menu buttons with options like to be redirected to [Coin Market Cap webiste](https://coinmarketcap.com/) and to close the application. 
 
+## TL;DR
+To quick experience the app, do the following:
+```
+git clone https://github.com/psatler/crypto-app-electron.git
+npm install
+npm start
+```
+
 ## Creating the initial app template
 Some of the steps taken to create the app are mentioned below.
 
@@ -18,14 +26,6 @@ then, in the project's root directory
 - then, in the _scripts_ key, the content was replaced to `"start: "electron ."`, so the developer are able to run in via `npm start`.
 - finally, open the electron's [quick start guide](https://electronjs.org/docs/tutorial/first-app) and copy the contents of that page to yours `main.js` file and `index.html` file (create one if you hasn't already)
 - then just run `npm start` to see the initial template running.
-
-## TL;DR
-To quick experience the app, do the following:
-```
-git clone https://github.com/psatler/crypto-app-electron.git
-npm install
-npm start
-```
 
 ## Deploying the app
 To create the app's _exe_ (executables), install the electron packager via `npm install electron-packager --save-dev`. Then follow the instructions shown in this [tutorial](https://www.christianengvall.se/electron-packager-tutorial/). Especially, the one that says abouts the deploy scripts (item 4 of that tutorial). So, in the `package.json` create a _scripts_ entry as shown below:
