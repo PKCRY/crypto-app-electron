@@ -2,6 +2,7 @@ const electron = require('electron');
 const path = require('path'); //for working with files
 const BrowserWindow = electron.remote.BrowserWindow; //it's gonna allow us to create an actually window
 const axios = require('axios')
+const ipc = electron.ipcRenderer
 
 const notifyBtn = document.getElementById('notifyBtn') //refering the Notify Me When button
 const price = document.querySelector('h1')
@@ -35,4 +36,9 @@ notifyBtn.addEventListener('click', function(event) { //loads the add window
     })
     win.loadURL(modalPath)
     win.show()
+})
+
+ipc.on('targetPriceVal', (event, arg) => {
+    targetPriceVal = Number(arg)
+    targetPrice.innerHTML = `$ ${targetPriceVal.toLocaleString('en')}`
 })

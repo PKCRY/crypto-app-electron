@@ -12,7 +12,8 @@ closeBtn.addEventListener('click', (event) => {
 
 const updateBtn = document.getElementById('updateBtn')
 updateBtn.addEventListener('click', () => {
-    ipc.send('update-notify-value', document.getElementById('notifyVal').value);
+    ipc.send('update-notify-value', document.getElementById('notifyVal').value); //sending a "signal" to main.js ipc
+    
     //then closes the window
     const window = remote.getCurrentWindow()
     window.close()
