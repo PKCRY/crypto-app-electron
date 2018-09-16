@@ -22,7 +22,7 @@ then, in the project's root directory
 ## TL;DR
 To quick experience the app, do the following:
 ```
-git clone 
+git clone https://github.com/psatler/crypto-app-electron.git
 npm install
 npm start
 ```
